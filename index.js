@@ -214,3 +214,11 @@ days.forEach(function (day, idx) {
       data: [],
     });
   });
+
+// Creates the data object inside each series object. 
+// For each day, the data object is 0-23, representing the hour
+// plus the occupancy expressed as number of people in the building.
+// e.g. [1, 3] equals 01:00, 3 people in the building.
+data.forEach(function (dataItem) {
+    series[dataItem[0]].data.push([dataItem[1], dataItem[2]]);
+  });
