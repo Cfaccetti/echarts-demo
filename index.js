@@ -14,3 +14,8 @@ const days = [
     'Monday', 'Tuesday', 'Wednesday',
     'Thursday', 'Friday', 'Saturday', 'Sunday'
 ];
+const title = [];
+const singleAxis = [];
+const series = [];
+const visualMap = [];
+const data = [];
