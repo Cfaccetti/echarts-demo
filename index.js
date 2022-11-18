@@ -222,3 +222,37 @@ days.forEach(function (day, idx) {
 data.forEach(function (dataItem) {
     series[dataItem[0]].data.push([dataItem[1], dataItem[2]]);
   });
+
+// assigns the previously defined properties to the option object
+option = {
+    tooltip: {
+      position: 'top'
+    },
+    title: title,
+    singleAxis: singleAxis,
+    series: series,
+    // defines the legend properties
+    visualMap: { 
+        type: 'continuous',
+        left: 'right',
+        top: 'middle',
+        min: 0,
+        max: 100,
+        itemHeight: 150,
+        itemWidth: 40,
+        calculable: true,
+        text: ['Number of people'],
+        textGap: 10,
+        textStyle: {
+          fontSize: 14,
+        },
+        inRange: {
+          symbolSize: [0,60],
+          color: ['#B79CED', '#957FEF', '#7161EF'],
+          opacity: [0.6,0.9]
+        },
+      },
+  };
+  
+  // assigns option object to chart and plot
+  option && myChart.setOption(option);
