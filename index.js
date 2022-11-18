@@ -14,10 +14,10 @@ const days = [
     'Monday', 'Tuesday', 'Wednesday',
     'Thursday', 'Friday', 'Saturday', 'Sunday'
 ];
-const title = [];
-const singleAxis = [];
-const series = [];
-const visualMap = [];
+let title = [];
+let singleAxis = [];
+let series = [];
+// This data simulates return data from an API.
 const data = [
     [0, 0, 4],
     [0, 1, 4],
@@ -188,3 +188,29 @@ const data = [
     [6, 22, 40],
     [6, 23, 26]
 ];
+days.forEach(function (day, idx) {
+    title.push({
+      textBaseline: 'middle',
+      top: ((idx + 0.5) * 100) / 7 + '%',
+      text: day
+    });
+    singleAxis.push({
+      left: 150,
+      type: 'category',
+      boundaryGap: false,
+      data: hours,
+      top: (idx * 100) /7 + 5 + '%',
+      height: 100 / 7 - 10 + '%',
+      width: '68%',
+      axisLabel: {
+        interval: 2
+      }
+    });
+    series.push({
+      name: day,
+      singleAxisIndex: idx,
+      coordinateSystem: 'singleAxis',
+      type: 'scatter',
+      data: [],
+    });
+  });
